@@ -43,8 +43,8 @@ body::after {
     transparent 2px
   );
   animation: crt-flicker 0.15s infinite;
-  z-index: 1000;
-  pointer-events: none; /* Allows mouse to click through it */
+  z-index: 999;
+  pointer-events: none;
 }
 /* --- END OF NEW BACKGROUND --- */
 
@@ -67,4 +67,10 @@ body::after {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-ibm-plex-mono);
   font-weight: 600;
+}
+
+/* Ensure content stays above the matrix background */
+main {
+  position: relative;
+  z-index: 10;
 }

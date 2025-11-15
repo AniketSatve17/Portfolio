@@ -1,7 +1,7 @@
-'use client' // This file must be a client component for the cursor
+'use client'
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
-import CursorRain from '@/components/CursorRain' // <-- NEW: Import the rain
+import MatrixRain from '@/components/MatrixRain' // ADD THIS IMPORT
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -14,9 +14,6 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: '--font-ibm-plex-mono',
 })
 
-// We must remove metadata export from client components
-// export const metadata = { ... }
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -25,7 +22,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Cybersecurity professional specializing in threat intelligence, penetration testing, and blockchain security." />
       </head>
       <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        <CursorRain /> {/* <-- NEW: Add the component here */}
+        <MatrixRain /> {/* ADD THIS LINE */}
         {children}
       </body>
     </html>

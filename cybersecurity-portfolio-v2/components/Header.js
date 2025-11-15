@@ -18,7 +18,7 @@ export default function Header() {
 
   // --- THIS IS THE FIX ---
   // We are back to scrolling to #hash-links
-  const navItems = ['About', 'Services', 'Projects', 'Contact']
+  const navItems = ['About', 'Services', 'CyberMap', 'Projects', 'Contact']
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id.toLowerCase())
