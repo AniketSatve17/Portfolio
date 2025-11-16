@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-ibm-plex-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- MR. ROBOT BACKGROUND --- */
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  font-family: var(--font-inter);
+  
+  /* This creates the CRT scanline effect */
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3) 0px,
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  animation: crt-flicker 0.15s infinite;
+  z-index: 999;
+  pointer-events: none;
+}
+/* --- END OF NEW BACKGROUND --- */
+
+
+/* Custom scrollbar (now red) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #E50914;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B20710;
+}
+
+/* Force headings to use the mono font for the "terminal" feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-ibm-plex-mono);
+  font-weight: 600;
+}
+
+/* Ensure content stays above the matrix background */
+main {
+  position: relative;
+  z-index: 10;
+}
