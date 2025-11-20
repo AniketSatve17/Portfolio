@@ -1,6 +1,7 @@
 'use client'
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
+import MatrixRain from '@/components/MatrixRain'
 // import MatrixRain from '@/components/MatrixRain' // COMMENTED OUT FOR NOW
 
 const inter = Inter({ 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
         {/* <MatrixRain /> */} {/* COMMENTED OUT FOR NOW */}
+       <MatrixRain /> 
         {children}
       </body>
     </html>

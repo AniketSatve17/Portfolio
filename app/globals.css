@@ -43,7 +43,8 @@ body::after {
     transparent 2px
   );
   animation: crt-flicker 0.15s infinite;
-  z-index: 999;
+  /* z-index: 999; */
+   z-index: 5;  /* LOWER */
   pointer-events: none;
 }
 /* --- END OF NEW BACKGROUND --- */
